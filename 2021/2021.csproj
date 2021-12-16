@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>_2021</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Day15\test-challenge.txt" />
+    <EmbeddedResource Include="Day15\test-input.txt" />
+    <EmbeddedResource Include="Day14\test-challenge.txt" />
+    <EmbeddedResource Include="Day14\test-input.txt" />
+    <EmbeddedResource Include="Day13\test-challenge.txt" />
+    <EmbeddedResource Include="Day13\test-input.txt" />
+    <EmbeddedResource Include="Day12\actual.txt" />
+    <EmbeddedResource Include="Day12\test-challenge.txt" />
+    <EmbeddedResource Include="Day12\should-be.txt" />
+    <EmbeddedResource Include="Day12\test-input.txt" />
+    <EmbeddedResource Include="Day11\test-challenge.txt" />
+    <EmbeddedResource Include="Day11\test-input.txt" />
+    <EmbeddedResource Include="Day8\test-challenge.txt" />
+    <EmbeddedResource Include="Day8\test-input.txt" />
+    <EmbeddedResource Include="Day5\test-challenge.txt" />
+    <EmbeddedResource Include="Day5\test-input.txt" />
+    <EmbeddedResource Include="Day4\test-challenge.txt" />
+    <EmbeddedResource Include="Day4\test-input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Day15\Day15.cs" />
+    <None Include="Day14\Day14.cs" />
+    <None Include="Day13\Day13.cs" />
+    <None Include="Day12\Day12.cs" />
+    <None Include="Day11\Day11.cs" />
+    <None Include="Day8\Day8.cs" />
+    <None Include="Day5\Day5.cs" />
+    <None Include="Day4\Day4.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Day1\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="NUnit" Version="3.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Day4\Day4.cs" />
+    <Resource Include="Day4\test-input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
