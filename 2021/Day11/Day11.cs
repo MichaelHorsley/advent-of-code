@@ -1,5 +1,4 @@
 ﻿using _2021.Helpers;
-using NUnit.Framework;
 
 namespace _2021.Day11
 {

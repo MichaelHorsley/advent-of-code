@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>_2022</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Inputs\Day1.txt" />
+    <None Remove="Inputs\Day1_Test.txt" />
+    <None Remove="Inputs\Day2.txt" />
+    <None Remove="Inputs\Day2_Test.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Inputs\Day1.txt" />
+    <EmbeddedResource Include="Inputs\Day1_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day2.txt" />
+    <EmbeddedResource Include="Inputs\Day2_Test.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.3" />
+  </ItemGroup>
+
+</Project>
