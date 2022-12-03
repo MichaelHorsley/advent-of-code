@@ -10,16 +10,21 @@
     <None Remove="Inputs\Day1_Test.txt" />
     <None Remove="Inputs\Day2.txt" />
     <None Remove="Inputs\Day2_Test.txt" />
+    <None Remove="Inputs\Day3.txt" />
+    <None Remove="Inputs\Day3_Test.txt" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Inputs\Day1.txt" />
     <EmbeddedResource Include="Inputs\Day1_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day3.txt" />
     <EmbeddedResource Include="Inputs\Day2.txt" />
+    <EmbeddedResource Include="Inputs\Day3_Test.txt" />
     <EmbeddedResource Include="Inputs\Day2_Test.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
     <PackageReference Include="NUnit" Version="3.13.3" />
   </ItemGroup>
 
