@@ -89,7 +89,7 @@ namespace _2022
                 return duplicatedItem - 96;
             }
 
-            return duplicatedItem - (65 - 27);
+            return duplicatedItem - 38;
         }
     }
 }
