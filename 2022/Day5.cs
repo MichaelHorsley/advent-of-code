@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
@@ -96,9 +95,9 @@ namespace _2022
 
                     for (var position = 0; position < charArray.Length; position += 4)
                     {
-                        var s = charArray[position + 1].ToString();
+                        var container = charArray[position + 1].ToString();
 
-                        dictionaryOfStacks.Add(s, new Stack<string>());
+                        dictionaryOfStacks.Add(container, new Stack<string>());
                     }
                 }
                 else
