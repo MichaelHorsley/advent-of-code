@@ -1,6 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Running;
+using Newtonsoft.Json;
 using NUnit.Framework;
 
 namespace _2022
@@ -16,6 +22,7 @@ namespace _2022
             Assert.AreEqual("CMZ", Day5Solution.PartOne(input));
         }
 
+        [Benchmark]
         [Test]
         public void PartOne_Star()
         {
@@ -32,6 +39,7 @@ namespace _2022
             Assert.AreEqual("MCD", Day5Solution.PartTwo(input));
         }
 
+        [Benchmark]
         [Test]
         public void PartTwo_Star()
         {
@@ -43,6 +51,7 @@ namespace _2022
 
     public class Day5Solution
     {
+        [Benchmark]
         public static string PartOne(string input)
         {
             var stackAndCommands = input.Replace("\n", "").Split('\r').ToList();
@@ -119,6 +128,7 @@ namespace _2022
             return dictionaryOfStacks;
         }
 
+        [Benchmark]
         public static string PartTwo(string input)
         {
             var stackAndCommands = input.Replace("\n", "").Split('\r').ToList();
