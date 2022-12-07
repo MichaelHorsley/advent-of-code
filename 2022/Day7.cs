@@ -59,44 +59,24 @@ namespace _2022
         [Benchmark]
         public static long PartTwo(string input)
         {
-            long fileSystemMaxSize = 70000000;
-            long spaceRequired = 30000000;
+            const long fileSystemMaxSize = 70000000;
+            const long spaceRequired = 30000000;
 
             var currentNode = CreateFileSystemStructure(input);
 
-            long currentSpacedUsed = currentNode.GetSizeOfFolder();
-            long currentSpaceFree = fileSystemMaxSize - currentSpacedUsed;
+            var currentSpacedUsed = currentNode.GetSizeOfFolder();
+            var currentSpaceFree = fileSystemMaxSize - currentSpacedUsed;
 
             var spacedNeededToFree = spaceRequired - currentSpaceFree;
 
-            var smallestFolderToDelete = new FolderNode
-            {
-                Files = new List<FileNode>{new FileNode{Size = (int)fileSystemMaxSize } }
-            };
+            var sizeList = new List<long>();
 
-            WorkoutSmallestDirectoryToDelete(currentNode, ref smallestFolderToDelete, spacedNeededToFree);
+            WorkOutSizeDictionary(sizeList, currentNode);
 
-            return smallestFolderToDelete.GetSizeOfFolder();
+            return (int)sizeList.Where(x => x > spacedNeededToFree).OrderBy(x => x).First();
         }
 
-        private static void WorkoutSmallestDirectoryToDelete(FolderNode currentNode, ref FolderNode smallestFolderToDelete, long spacedNeededToFree)
-        {
-            var sizeOfFolder = currentNode.GetSizeOfFolder();
-
-            if (sizeOfFolder > spacedNeededToFree)
-            {
-                if (sizeOfFolder < smallestFolderToDelete.GetSizeOfFolder())
-                {
-                    smallestFolderToDelete = currentNode;
-                }
-            }
-            
-            foreach (var x in currentNode.Folders)
-            {
-                WorkoutSmallestDirectoryToDelete(x, ref smallestFolderToDelete, spacedNeededToFree);
-            }
-        }
-
+        [Benchmark]
         private static FolderNode CreateFileSystemStructure(string input)
         {
             var commands = input.Replace("\r", "").Split("\n").Skip(1).ToList();
@@ -154,6 +134,7 @@ namespace _2022
             return currentNode;
         }
 
+        [Benchmark]
         private static void WorkOutSizeDictionary(List<long> sizeDictionary, FolderNode currentNode)
         {
             var sizeOfFolder = currentNode.GetSizeOfFolder();

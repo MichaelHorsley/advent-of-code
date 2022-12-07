@@ -17,9 +17,10 @@ namespace BenchMarking
         [Benchmark]
         public void Run()
         {
-            var input = FileHelper.GetInputFromFile("Day6.txt");
+            var input = FileHelper.GetInputFromFile("Day7.txt");
 
-            Day6Solution.PartTwo(input);
+            Day7Solution.PartOne(input);
+            Day7Solution.PartTwo(input);
         }
     }
 }
