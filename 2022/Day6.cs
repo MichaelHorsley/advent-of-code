@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using BenchmarkDotNet.Attributes;
 using NUnit.Framework;
 
@@ -61,6 +60,7 @@ namespace _2022
             return FindStartOfInputWithoutDuplicateCharactersHashSetApproach(input, lengthToTake);
         }
 
+        [Benchmark]
         private static int FindStartOfInputWithoutDuplicateCharactersHashSetApproach(string input, int lengthToTake)
         {
             for (var position = 0; position < input.Length; position++)
