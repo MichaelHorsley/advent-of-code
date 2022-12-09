@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 using NUnit.Framework;
 using System.Linq;
@@ -14,7 +13,7 @@ namespace _2022
         {
             var input = FileHelper.GetInputFromFile("Day9_Test.txt");
 
-            Assert.AreEqual(13, Day9Solution.PartOne(input));
+            Assert.AreEqual(88, Day9Solution.PartOne(input));
         }
 
         [Test]
@@ -38,7 +37,7 @@ namespace _2022
         {
             var input = FileHelper.GetInputFromFile("Day9.txt");
 
-            Assert.AreEqual(0, Day9Solution.PartTwo(input));
+            Assert.AreEqual(2566, Day9Solution.PartTwo(input));
         }
     }
 
@@ -49,8 +48,39 @@ namespace _2022
         {
             var ropeMovements = input.Replace("\r", "").Split("\n").ToList();
 
-            var head = new Node { X = 0, Y = 0 };
-            var tail = new Node { X = 0, Y = 0 };
+            var nodeList = new List<Node>
+            {
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 }
+            };
+
+            return MoveRope(ropeMovements, nodeList);
+        }
+
+        [Benchmark]
+        public static long PartTwo(string input)
+        {
+            var ropeMovements = input.Replace("\r", "").Split("\n").ToList();
+
+            var nodeList = new List<Node>
+            {
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+                new Node { X = 0, Y = 0 },
+            };
+
+            return MoveRope(ropeMovements, nodeList);
+        }
+
+        private static int MoveRope(List<string> ropeMovements, List<Node> nodeList)
+        {
             var tailPositionHashset = new HashSet<string>();
 
             foreach (var ropeMovement in ropeMovements)
@@ -60,19 +90,19 @@ namespace _2022
                 switch (commandSplit[0])
                 {
                     case "D":
-                        MoveDown(head, tail, int.Parse(commandSplit[1]), tailPositionHashset);
+                        MoveDown(nodeList, int.Parse(commandSplit[1]), tailPositionHashset);
                         break;
 
                     case "L":
-                        MoveLeft(head, tail, int.Parse(commandSplit[1]), tailPositionHashset);
+                        MoveLeft(nodeList, int.Parse(commandSplit[1]), tailPositionHashset);
                         break;
 
                     case "U":
-                        MoveUp(head, tail, int.Parse(commandSplit[1]), tailPositionHashset);
+                        MoveUp(nodeList, int.Parse(commandSplit[1]), tailPositionHashset);
                         break;
 
                     case "R":
-                        MoveRight(head, tail, int.Parse(commandSplit[1]), tailPositionHashset); 
+                        MoveRight(nodeList, int.Parse(commandSplit[1]), tailPositionHashset);
                         break;
                 }
             }
@@ -80,50 +110,76 @@ namespace _2022
             return tailPositionHashset.Count;
         }
 
-        private static void MoveDown(Node head, Node tail, int numberOfSteps, HashSet<string> tailPositionHashset)
+        private static void MoveDown(List<Node> nodes, int numberOfSteps, HashSet<string> tailPositionHashset)
         {
             for (var stepNumber = 0; stepNumber < numberOfSteps; stepNumber++)
             {
-                head.Y--;
-                tail.MoveTowards(head.X, head.Y);
-                tailPositionHashset.Add($"{tail.X}-${tail.Y}");
+                nodes[0].Y--;
+
+                for (var index = 1; index < nodes.Count; index++)
+                {
+                    var head = nodes[index-1];
+                    var tail = nodes[index];
+
+                    tail.MoveTowards(head.X, head.Y);
+                }
+
+                tailPositionHashset.Add($"{nodes.Last().X}-${nodes.Last().Y}");
             }
         }
 
-        private static void MoveLeft(Node head, Node tail, int numberOfSteps, HashSet<string> tailPositionHashset)
+        private static void MoveLeft(List<Node> nodes, int numberOfSteps, HashSet<string> tailPositionHashset)
         {
             for (var stepNumber = 0; stepNumber < numberOfSteps; stepNumber++)
             {
-                head.X--;
-                tail.MoveTowards(head.X, head.Y);
-                tailPositionHashset.Add($"{tail.X}-${tail.Y}");
+                nodes[0].X--;
+
+                for (var index = 1; index < nodes.Count; index++)
+                {
+                    var head = nodes[index - 1];
+                    var tail = nodes[index];
+
+                    tail.MoveTowards(head.X, head.Y);
+                }
+
+                tailPositionHashset.Add($"{nodes.Last().X}-${nodes.Last().Y}");
             }
         }
 
-        private static void MoveUp(Node head, Node tail, int numberOfSteps, HashSet<string> tailPositionHashset)
+        private static void MoveUp(List<Node> nodes, int numberOfSteps, HashSet<string> tailPositionHashset)
         {
             for (var stepNumber = 0; stepNumber < numberOfSteps; stepNumber++)
             {
-                head.Y++;
-                tail.MoveTowards(head.X, head.Y);
-                tailPositionHashset.Add($"{tail.X}-${tail.Y}");
+                nodes[0].Y++;
+
+                for (var index = 1; index < nodes.Count; index++)
+                {
+                    var head = nodes[index - 1];
+                    var tail = nodes[index];
+
+                    tail.MoveTowards(head.X, head.Y);
+                }
+
+                tailPositionHashset.Add($"{nodes.Last().X}-${nodes.Last().Y}");
             }
         }
 
-        private static void MoveRight(Node head, Node tail, int numberOfSteps, HashSet<string> tailPositionHashset)
+        private static void MoveRight(List<Node> nodes, int numberOfSteps, HashSet<string> tailPositionHashset)
         {
             for (var stepNumber = 0; stepNumber < numberOfSteps; stepNumber++)
             {
-                head.X++;
-                tail.MoveTowards(head.X, head.Y);
-                tailPositionHashset.Add($"{tail.X}-${tail.Y}");
-            }
-        }
+                nodes[0].X++;
 
-        [Benchmark]
-        public static long PartTwo(string input)
-        {
-            return 0;
+                for (var index = 1; index < nodes.Count; index++)
+                {
+                    var head = nodes[index - 1];
+                    var tail = nodes[index];
+
+                    tail.MoveTowards(head.X, head.Y);
+                }
+
+                tailPositionHashset.Add($"{nodes.Last().X}-${nodes.Last().Y}");
+            }
         }
     }
 
@@ -146,17 +202,30 @@ namespace _2022
                 }
                 else
                 {
-                    MoveToNextToHead(targetX, targetY);
+                    if (!MoveToNextToHead(targetX, targetY))
+                    {
+                        MoveDiagonally(targetX, targetY);
+                    }
                 }
             }
         }
 
-        private void MoveToNextToHead(int targetX, int targetY)
+        private void MoveDiagonally(int targetX, int targetY)
         {
-            if (AdjacentToNode(targetX, targetY, X+1, Y+1)) { X++; Y++; return; } //Move North-East
-            if (AdjacentToNode(targetX, targetY, X-1, Y+1)) { X--; Y++; return; } //Move North-West
-            if (AdjacentToNode(targetX, targetY, X-1, Y-1)) { X--; Y--; return; } //Move South-West
-            if (AdjacentToNode(targetX, targetY, X+1, Y-1)) { X++; Y--; return; } //Move South-East
+            if (NodeAlreadyTouchingTargetPosition(targetX, targetY, X + 1, Y + 1)) { X++; Y++; return; } //Move North-East
+            if (NodeAlreadyTouchingTargetPosition(targetX, targetY, X - 1, Y + 1)) { X--; Y++; return; } //Move North-West
+            if (NodeAlreadyTouchingTargetPosition(targetX, targetY, X - 1, Y - 1)) { X--; Y--; return; } //Move South-West
+            if (NodeAlreadyTouchingTargetPosition(targetX, targetY, X + 1, Y - 1)) { X++; Y--; return; } //Move South-East
+        }
+
+        private bool MoveToNextToHead(int targetX, int targetY)
+        {
+            if (AdjacentToNode(targetX, targetY, X+1, Y+1)) { X++; Y++; return true; } //Move North-East
+            if (AdjacentToNode(targetX, targetY, X-1, Y+1)) { X--; Y++; return true; } //Move North-West
+            if (AdjacentToNode(targetX, targetY, X-1, Y-1)) { X--; Y--; return true; } //Move South-West
+            if (AdjacentToNode(targetX, targetY, X+1, Y-1)) { X++; Y--; return true; } //Move South-East
+
+            return false;
         }
 
         private void MoveYCloser(int targetY)
