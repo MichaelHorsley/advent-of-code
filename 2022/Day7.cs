@@ -119,7 +119,6 @@ namespace _2022
                     default:
                         currentNode.Files.Add(new FileNode
                         {
-                            Name = chunkedCommand[1],
                             Size = Convert.ToInt32(chunkedCommand[0])
                         });
                         break;
@@ -164,6 +163,5 @@ namespace _2022
     public class FileNode
     {
         public int Size {get; set; }
-        public string Name { get; set; }
     }
 }
