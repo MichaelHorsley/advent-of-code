@@ -135,10 +135,11 @@ namespace _2022
         {
             var rowsList = input.Replace("\r", "").Split("\n").ToList();
 
-            var nodes = new List<Node>();
-
-            nodes.Add(GetNode("[[2]]"));
-            nodes.Add(GetNode("[[6]]"));
+            var nodes = new List<Node>
+            {
+                GetNode("[[2]]"),
+                GetNode("[[6]]")
+            };
 
             for (var index = 0; index < rowsList.Count; index ++)
             {
@@ -161,7 +162,7 @@ namespace _2022
 
         private static List<Node> BubbleSortNode(List<Node> nodes)
         {
-            List<Node> list = new List<Node>();
+            var list = new List<Node>();
 
             foreach (var nodeToBeAdded in nodes)
             {
@@ -235,7 +236,10 @@ namespace _2022
                 }
                 else
                 {
-                    var compareNodes = CompareNodes(leftNodeChild.Type == NodeType.Array ? leftNodeChild : new Node(leftNodeChild), rightNodeChild.Type == NodeType.Array ? rightNodeChild : new Node(rightNodeChild));
+                    var compareNodes = CompareNodes(
+                        leftNodeChild.Type == NodeType.Array ? leftNodeChild : new Node(leftNodeChild), 
+                        rightNodeChild.Type == NodeType.Array ? rightNodeChild : new Node(rightNodeChild)
+                    );
 
                     if (compareNodes == null)
                     {
