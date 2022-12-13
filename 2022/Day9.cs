@@ -183,7 +183,7 @@ namespace _2022
         }
     }
 
-    public class Node
+    internal class Node
     {
         public int X { get; set; }
         public int Y { get; set; }
