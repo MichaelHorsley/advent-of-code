@@ -14,6 +14,8 @@
     <None Remove="Inputs\Day11_Test.txt" />
     <None Remove="Inputs\Day12.txt" />
     <None Remove="Inputs\Day12_Test.txt" />
+    <None Remove="Inputs\Day13.txt" />
+    <None Remove="Inputs\Day13_Test.txt" />
     <None Remove="Inputs\Day1_Test.txt" />
     <None Remove="Inputs\Day2.txt" />
     <None Remove="Inputs\Day2_Test.txt" />
@@ -35,8 +37,10 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Inputs\Day1.txt" />
+    <EmbeddedResource Include="Inputs\Day13.txt" />
     <EmbeddedResource Include="Inputs\Day12.txt" />
     <EmbeddedResource Include="Inputs\Day11.txt" />
+    <EmbeddedResource Include="Inputs\Day13_Test.txt" />
     <EmbeddedResource Include="Inputs\Day12_Test.txt" />
     <EmbeddedResource Include="Inputs\Day11_Test.txt" />
     <EmbeddedResource Include="Inputs\Day1_Test.txt" />
