@@ -66,8 +66,6 @@ namespace _2022
 
             var xSize = maxX - minX;
 
-            var xOffSet = 500 - minX;
-
             var caveSystem = new string[xSize+1,maxY+1];
 
             for (int x = 0; x <= xSize; x++)
@@ -77,6 +75,8 @@ namespace _2022
                     caveSystem[x, y] = ".";
                 }
             }
+
+            var xOffSet = minX;
 
             foreach (var wallPath in rowsList)
             {
@@ -104,11 +104,11 @@ namespace _2022
 
                         while (startingPositionX != endingPositionX)
                         {
-                            caveSystem[startingPositionX - minX, startingPositionY] = "#";
+                            caveSystem[startingPositionX - xOffSet, startingPositionY] = "#";
                             startingPositionX += increment;
                         }
 
-                        caveSystem[startingPositionX - minX, startingPositionY] = "#";
+                        caveSystem[startingPositionX - xOffSet, startingPositionY] = "#";
                     }
                     else
                     {
@@ -116,11 +116,11 @@ namespace _2022
 
                         while (startingPositionY != endingPositionY)
                         {
-                            caveSystem[startingPositionX - minX, startingPositionY] = "#";
+                            caveSystem[startingPositionX - xOffSet, startingPositionY] = "#";
                             startingPositionY += increment;
                         }
 
-                        caveSystem[startingPositionX - minX, startingPositionY] = "#";
+                        caveSystem[startingPositionX - xOffSet, startingPositionY] = "#";
                     }
                 }
             }
@@ -215,7 +215,6 @@ namespace _2022
 
             var centerX = (int)Math.Floor((decimal)(maxX / 2));
 
-            var xOffSet = 500 - centerX;
 
             var caveSystem = new string[maxX + 1, maxY + 1];
 
@@ -226,6 +225,8 @@ namespace _2022
                     caveSystem[x, y] = y == maxY ? "#" : ".";
                 }
             }
+
+            var xOffSet = 500 - centerX;
 
             foreach (var wallPath in rowsList)
             {
