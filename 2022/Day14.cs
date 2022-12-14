@@ -274,8 +274,6 @@ namespace _2022
                 }
             }
 
-            DrawItOut(maxY, maxX, caveSystem);
-
             int sandCount = 0;
 
             while (true)
@@ -322,19 +320,6 @@ namespace _2022
                         }
                     }
                 }
-            }
-        }
-
-        private static void DrawItOut(int maxY, int maxX, string[,] caveSystem)
-        {
-            for (int y = 0; y <= maxY; y++)
-            {
-                for (int x = 0; x <= maxX; x++)
-                {
-                    Console.Write(caveSystem[x, y]);
-                }
-
-                Console.WriteLine();
             }
         }
     }
