@@ -7,42 +7,42 @@ using NUnit.Framework;
 namespace _2022
 {
     [TestFixture]
-    public class Day7
+    public class Day07
     {
         [Test]
         public void PartOne_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day7_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day07_Test.txt");
 
-            Assert.AreEqual(95437, Day7Solution.PartOne(input));
+            Assert.AreEqual(95437, Day07Solution.PartOne(input));
         }
 
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day7.txt");
+            var input = FileHelper.GetInputFromFile("Day07.txt");
 
-            Assert.AreEqual(1844187, Day7Solution.PartOne(input));
+            Assert.AreEqual(1844187, Day07Solution.PartOne(input));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day7_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day07_Test.txt");
 
-            Assert.AreEqual(24933642, Day7Solution.PartTwo(input));
+            Assert.AreEqual(24933642, Day07Solution.PartTwo(input));
         }
 
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day7.txt");
+            var input = FileHelper.GetInputFromFile("Day07.txt");
 
-            Assert.AreEqual(4978279, Day7Solution.PartTwo(input));
+            Assert.AreEqual(4978279, Day07Solution.PartTwo(input));
         }
     }
 
-    public class Day7Solution
+    public class Day07Solution
     {
         [Benchmark]
         public static int PartOne(string input)

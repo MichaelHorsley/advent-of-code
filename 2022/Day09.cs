@@ -6,42 +6,42 @@ using System.Linq;
 namespace _2022
 {
     [TestFixture]
-    public class Day9
+    public class Day09
     {
         [Test]
         public void PartOne_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day9_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day09_Test.txt");
 
-            Assert.AreEqual(88, Day9Solution.PartOne(input));
+            Assert.AreEqual(88, Day09Solution.PartOne(input));
         }
 
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day9.txt");
+            var input = FileHelper.GetInputFromFile("Day09.txt");
 
-            Assert.AreEqual(6090, Day9Solution.PartOne(input));
+            Assert.AreEqual(6090, Day09Solution.PartOne(input));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day9_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day09_Test.txt");
 
-            Assert.AreEqual(36, Day9Solution.PartTwo(input));
+            Assert.AreEqual(36, Day09Solution.PartTwo(input));
         }
 
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day9.txt");
+            var input = FileHelper.GetInputFromFile("Day09.txt");
 
-            Assert.AreEqual(2566, Day9Solution.PartTwo(input));
+            Assert.AreEqual(2566, Day09Solution.PartTwo(input));
         }
     }
 
-    public class Day9Solution
+    public class Day09Solution
     {
         [Benchmark]
         public static int PartOne(string input)

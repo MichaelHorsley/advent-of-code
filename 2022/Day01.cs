@@ -5,42 +5,42 @@ using NUnit.Framework;
 namespace _2022
 {
     [TestFixture]
-    public class Day1
+    public class Day01
     {
         [Test]
         public void PartOne_Test()
         {
-            var contents = FileHelper.GetInputFromFile("Day1_Test.txt");
+            var contents = FileHelper.GetInputFromFile("Day01_Test.txt");
 
-            Assert.AreEqual(24000, Day1Solution.PartOne(contents));
+            Assert.AreEqual(24000, Day01Solution.PartOne(contents));
         }
 
         [Test]
         public void PartOne_Star()
         {
-            var contents = FileHelper.GetInputFromFile("Day1.txt");
+            var contents = FileHelper.GetInputFromFile("Day01.txt");
 
-            Assert.AreEqual(72240, Day1Solution.PartOne(contents));
+            Assert.AreEqual(72240, Day01Solution.PartOne(contents));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var contents = FileHelper.GetInputFromFile("Day1_Test.txt");
+            var contents = FileHelper.GetInputFromFile("Day01_Test.txt");
 
-            Assert.AreEqual(45000, Day1Solution.PartTwo(contents));
+            Assert.AreEqual(45000, Day01Solution.PartTwo(contents));
         }
 
         [Test]
         public void PartTwo_Star()
         {
-            var contents = FileHelper.GetInputFromFile("Day1.txt");
+            var contents = FileHelper.GetInputFromFile("Day01.txt");
 
-            Assert.AreEqual(210957, Day1Solution.PartTwo(contents));
+            Assert.AreEqual(210957, Day01Solution.PartTwo(contents));
         }
     }
 
-    public class Day1Solution
+    public class Day01Solution
     {
         public static long PartOne(string input)
         {

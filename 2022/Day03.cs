@@ -4,42 +4,42 @@ using NUnit.Framework;
 namespace _2022
 {
     [TestFixture]
-    public class Day3
+    public class Day03
     {
         [Test]
         public void PartOne_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day3_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day03_Test.txt");
 
-            Assert.AreEqual(157, Day3Solution.PartOne(input));
+            Assert.AreEqual(157, Day03Solution.PartOne(input));
         }
 
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day3.txt");
+            var input = FileHelper.GetInputFromFile("Day03.txt");
 
-            Assert.AreEqual(8349, Day3Solution.PartOne(input));
+            Assert.AreEqual(8349, Day03Solution.PartOne(input));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day3_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day03_Test.txt");
 
-            Assert.AreEqual(70, Day3Solution.PartTwo(input));
+            Assert.AreEqual(70, Day03Solution.PartTwo(input));
         }
 
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day3.txt");
+            var input = FileHelper.GetInputFromFile("Day03.txt");
 
-            Assert.AreEqual(2681, Day3Solution.PartTwo(input));
+            Assert.AreEqual(2681, Day03Solution.PartTwo(input));
         }
     }
 
-    public class Day3Solution
+    public class Day03Solution
     {
         public static long PartOne(string input)
         {

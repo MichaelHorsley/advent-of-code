@@ -5,22 +5,22 @@ using NUnit.Framework;
 namespace _2022
 {
     [TestFixture]
-    public class Day6
+    public class Day06
     {
         [TestCase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 7)]
         [TestCase("bvwbjplbgvbhsrlpgdmjqwftvncz", 5)]
         public void PartOne_Test(string input, int expected)
         {
-            Assert.AreEqual(expected, Day6Solution.PartOne(input));
+            Assert.AreEqual(expected, Day06Solution.PartOne(input));
         }
 
         [Benchmark]
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day6.txt");
+            var input = FileHelper.GetInputFromFile("Day06.txt");
 
-            Assert.AreEqual(1647, Day6Solution.PartOne(input));
+            Assert.AreEqual(1647, Day06Solution.PartOne(input));
         }
 
         [TestCase("mjqjpqmgbljsphdztnvjfqwrcgsmlb", 19)]
@@ -29,20 +29,20 @@ namespace _2022
         [TestCase("nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg", 29)]
         public void PartTwo_Test(string input, int expected)
         {
-            Assert.AreEqual(expected, Day6Solution.PartTwo(input));
+            Assert.AreEqual(expected, Day06Solution.PartTwo(input));
         }
 
         [Benchmark]
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day6.txt");
+            var input = FileHelper.GetInputFromFile("Day06.txt");
 
-            Assert.AreEqual(2447, Day6Solution.PartTwo(input));
+            Assert.AreEqual(2447, Day06Solution.PartTwo(input));
         }
     }
 
-    public class Day6Solution
+    public class Day06Solution
     {
         [Benchmark]
         public static int PartOne(string input)

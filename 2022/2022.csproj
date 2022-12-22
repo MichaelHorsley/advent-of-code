@@ -7,7 +7,24 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Inputs\Day1.txt" />
+    <None Remove="Inputs\Day01.txt" />
+    <None Remove="Inputs\Day01_Test.txt" />
+    <None Remove="Inputs\Day02.txt" />
+    <None Remove="Inputs\Day02_Test.txt" />
+    <None Remove="Inputs\Day03.txt" />
+    <None Remove="Inputs\Day03_Test.txt" />
+    <None Remove="Inputs\Day04.txt" />
+    <None Remove="Inputs\Day04_Test.txt" />
+    <None Remove="Inputs\Day05.txt" />
+    <None Remove="Inputs\Day05_Test.txt" />
+    <None Remove="Inputs\Day06.txt" />
+    <None Remove="Inputs\Day06_Test.txt" />
+    <None Remove="Inputs\Day07.txt" />
+    <None Remove="Inputs\Day07_Test.txt" />
+    <None Remove="Inputs\Day08.txt" />
+    <None Remove="Inputs\Day08_Test.txt" />
+    <None Remove="Inputs\Day09.txt" />
+    <None Remove="Inputs\Day09_Test.txt" />
     <None Remove="Inputs\Day10.txt" />
     <None Remove="Inputs\Day10_Test.txt" />
     <None Remove="Inputs\Day11.txt" />
@@ -24,27 +41,34 @@
     <None Remove="Inputs\Day16_Test.txt" />
     <None Remove="Inputs\Day17.txt" />
     <None Remove="Inputs\Day17_Test.txt" />
-    <None Remove="Inputs\Day1_Test.txt" />
-    <None Remove="Inputs\Day2.txt" />
-    <None Remove="Inputs\Day2_Test.txt" />
-    <None Remove="Inputs\Day3.txt" />
-    <None Remove="Inputs\Day3_Test.txt" />
-    <None Remove="Inputs\Day4.txt" />
-    <None Remove="Inputs\Day4_Test.txt" />
-    <None Remove="Inputs\Day5.txt" />
-    <None Remove="Inputs\Day5_Test.txt" />
-    <None Remove="Inputs\Day6.txt" />
-    <None Remove="Inputs\Day6_Test.txt" />
-    <None Remove="Inputs\Day7.txt" />
-    <None Remove="Inputs\Day7_Test.txt" />
-    <None Remove="Inputs\Day8.txt" />
-    <None Remove="Inputs\Day8_Test.txt" />
-    <None Remove="Inputs\Day9.txt" />
-    <None Remove="Inputs\Day9_Test.txt" />
+    <None Remove="Inputs\Day18.txt" />
+    <None Remove="Inputs\Day18_Test.txt" />
+    <None Remove="Inputs\Day19.txt" />
+    <None Remove="Inputs\Day19_Test.txt" />
+    <None Remove="Inputs\Day20.txt" />
+    <None Remove="Inputs\Day20_Test.txt" />
+    <None Remove="Inputs\Day21.txt" />
+    <None Remove="Inputs\Day21_Test.txt" />
+    <None Remove="Inputs\Day22.txt" />
+    <None Remove="Inputs\Day22_Test.txt" />
+    <None Remove="Inputs\Day23.txt" />
+    <None Remove="Inputs\Day23_Test.txt" />
+    <None Remove="Inputs\Day24.txt" />
+    <None Remove="Inputs\Day24_Test.txt" />
+    <None Remove="Inputs\Day25.txt" />
+    <None Remove="Inputs\Day25_Test.txt" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Inputs\Day1.txt" />
+    <EmbeddedResource Include="Inputs\Day01.txt" />
+    <EmbeddedResource Include="Inputs\Day18.txt" />
+    <EmbeddedResource Include="Inputs\Day19.txt" />
+    <EmbeddedResource Include="Inputs\Day20.txt" />
+    <EmbeddedResource Include="Inputs\Day21.txt" />
+    <EmbeddedResource Include="Inputs\Day22.txt" />
+    <EmbeddedResource Include="Inputs\Day23.txt" />
+    <EmbeddedResource Include="Inputs\Day24.txt" />
+    <EmbeddedResource Include="Inputs\Day25.txt" />
     <EmbeddedResource Include="Inputs\Day17.txt" />
     <EmbeddedResource Include="Inputs\Day16.txt" />
     <EmbeddedResource Include="Inputs\Day15.txt" />
@@ -52,6 +76,14 @@
     <EmbeddedResource Include="Inputs\Day13.txt" />
     <EmbeddedResource Include="Inputs\Day12.txt" />
     <EmbeddedResource Include="Inputs\Day11.txt" />
+    <EmbeddedResource Include="Inputs\Day19_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day20_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day21_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day22_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day23_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day24_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day25_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day18_Test.txt" />
     <EmbeddedResource Include="Inputs\Day17_Test.txt" />
     <EmbeddedResource Include="Inputs\Day16_Test.txt" />
     <EmbeddedResource Include="Inputs\Day15_Test.txt" />
@@ -59,25 +91,25 @@
     <EmbeddedResource Include="Inputs\Day13_Test.txt" />
     <EmbeddedResource Include="Inputs\Day12_Test.txt" />
     <EmbeddedResource Include="Inputs\Day11_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day1_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day01_Test.txt" />
     <EmbeddedResource Include="Inputs\Day10.txt" />
-    <EmbeddedResource Include="Inputs\Day9.txt" />
-    <EmbeddedResource Include="Inputs\Day8.txt" />
-    <EmbeddedResource Include="Inputs\Day7.txt" />
-    <EmbeddedResource Include="Inputs\Day6.txt" />
-    <EmbeddedResource Include="Inputs\Day5.txt" />
-    <EmbeddedResource Include="Inputs\Day4.txt" />
-    <EmbeddedResource Include="Inputs\Day3.txt" />
-    <EmbeddedResource Include="Inputs\Day2.txt" />
+    <EmbeddedResource Include="Inputs\Day09.txt" />
+    <EmbeddedResource Include="Inputs\Day08.txt" />
+    <EmbeddedResource Include="Inputs\Day07.txt" />
+    <EmbeddedResource Include="Inputs\Day06.txt" />
+    <EmbeddedResource Include="Inputs\Day05.txt" />
+    <EmbeddedResource Include="Inputs\Day04.txt" />
+    <EmbeddedResource Include="Inputs\Day03.txt" />
+    <EmbeddedResource Include="Inputs\Day02.txt" />
     <EmbeddedResource Include="Inputs\Day10_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day9_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day8_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day7_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day6_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day5_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day4_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day3_Test.txt" />
-    <EmbeddedResource Include="Inputs\Day2_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day09_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day08_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day07_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day06_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day05_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day04_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day03_Test.txt" />
+    <EmbeddedResource Include="Inputs\Day02_Test.txt" />
   </ItemGroup>
 
   <ItemGroup>

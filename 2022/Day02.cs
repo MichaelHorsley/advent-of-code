@@ -5,42 +5,42 @@ using NUnit.Framework;
 namespace _2022
 {
     [TestFixture]
-    public class Day2
+    public class Day02
     {
         [Test]
         public void PartOne_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day2_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day02_Test.txt");
 
-            Assert.AreEqual(15, Day2Solution.PartOne(input));
+            Assert.AreEqual(15, Day02Solution.PartOne(input));
         }
 
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day2.txt");
+            var input = FileHelper.GetInputFromFile("Day02.txt");
 
-            Assert.AreEqual(13446, Day2Solution.PartOne(input));
+            Assert.AreEqual(13446, Day02Solution.PartOne(input));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day2_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day02_Test.txt");
 
-            Assert.AreEqual(12, Day2Solution.PartTwo(input));
+            Assert.AreEqual(12, Day02Solution.PartTwo(input));
         }
 
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day2.txt");
+            var input = FileHelper.GetInputFromFile("Day02.txt");
 
-            Assert.AreEqual(13509, Day2Solution.PartTwo(input));
+            Assert.AreEqual(13509, Day02Solution.PartTwo(input));
         }
     }
 
-    public class Day2Solution
+    public class Day02Solution
     {
         private static readonly Dictionary<RockPaperScissors, int> PlayerMoveScoreDictionary = new Dictionary<RockPaperScissors, int>
         {

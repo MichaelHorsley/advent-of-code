@@ -7,44 +7,44 @@ using NUnit.Framework;
 namespace _2022
 {
     [TestFixture]
-    public class Day5
+    public class Day05
     {
         [Test]
         public void PartOne_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day5_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day05_Test.txt");
 
-            Assert.AreEqual("CMZ", Day5Solution.PartOne(input));
+            Assert.AreEqual("CMZ", Day05Solution.PartOne(input));
         }
 
         [Benchmark]
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day5.txt");
+            var input = FileHelper.GetInputFromFile("Day05.txt");
 
-            Assert.AreEqual("ZWHVFWQWW", Day5Solution.PartOne(input));
+            Assert.AreEqual("ZWHVFWQWW", Day05Solution.PartOne(input));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day5_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day05_Test.txt");
 
-            Assert.AreEqual("MCD", Day5Solution.PartTwo(input));
+            Assert.AreEqual("MCD", Day05Solution.PartTwo(input));
         }
 
         [Benchmark]
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day5.txt");
+            var input = FileHelper.GetInputFromFile("Day05.txt");
 
-            Assert.AreEqual("HZFZCCWWV", Day5Solution.PartTwo(input));
+            Assert.AreEqual("HZFZCCWWV", Day05Solution.PartTwo(input));
         }
     }
 
-    public class Day5Solution
+    public class Day05Solution
     {
         [Benchmark]
         public static string PartOne(string input)

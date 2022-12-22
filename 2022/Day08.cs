@@ -5,42 +5,42 @@ using System.Linq;
 namespace _2022
 {
     [TestFixture]
-    public class Day8
+    public class Day08
     {
         [Test]
         public void PartOne_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day8_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day08_Test.txt");
 
-            Assert.AreEqual(21, Day8Solution.PartOne(input));
+            Assert.AreEqual(21, Day08Solution.PartOne(input));
         }
 
         [Test]
         public void PartOne_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day8.txt");
+            var input = FileHelper.GetInputFromFile("Day08.txt");
 
-            Assert.AreEqual(1698, Day8Solution.PartOne(input));
+            Assert.AreEqual(1698, Day08Solution.PartOne(input));
         }
 
         [Test]
         public void PartTwo_Test()
         {
-            var input = FileHelper.GetInputFromFile("Day8_Test.txt");
+            var input = FileHelper.GetInputFromFile("Day08_Test.txt");
 
-            Assert.AreEqual(8, Day8Solution.PartTwo(input));
+            Assert.AreEqual(8, Day08Solution.PartTwo(input));
         }
 
         [Test]
         public void PartTwo_Star()
         {
-            var input = FileHelper.GetInputFromFile("Day8.txt");
+            var input = FileHelper.GetInputFromFile("Day08.txt");
 
-            Assert.AreEqual(672280, Day8Solution.PartTwo(input));
+            Assert.AreEqual(672280, Day08Solution.PartTwo(input));
         }
     }
 
-    public class Day8Solution
+    public class Day08Solution
     {
         [Benchmark]
         public static int PartOne(string input)
