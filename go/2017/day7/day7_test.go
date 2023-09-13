@@ -18,7 +18,7 @@ func TestPartOne_Test(t *testing.T) {
 	var expected string = "tknk"
 
 	if got != expected {
-		t.Errorf("PartOne(%s) = %s; want %s", input, got, expected)
+		t.Errorf("PartOne = %s; want %s", got, expected)
 	}
 }
 
@@ -39,35 +39,36 @@ func TestPartOne_Real(t *testing.T) {
 	}
 }
 
-// func TestPartTwo_TestingTheEnds(t *testing.T) {
-// 	input := "91212129"
-// 	var expected int64 = 9
+func TestPartTwo_Test(t *testing.T) {
+	b, err := os.ReadFile("test_input.txt")
+	if err != nil {
+		return
+	}
 
-// 	got := part1(input)
+	input := string(b)
 
-// 	if got != expected {
-// 		t.Errorf("PartOne(%s) = %d; want %d", input, got, expected)
-// 	}
-// }
+	got := part2(input)
 
-// type testCase struct {
-// 	input    string
-// 	expected int64
-// }
+	var expected int = 60
 
-// var addTests = []testCase{
-// 	{"1212", 6},
-// 	{"1221", 0},
-// 	{"123425", 4},
-// 	{"123123", 12},
-// 	{"12131415", 4},
-// }
+	if got != expected {
+		t.Errorf("Part2 %d; want %d", got, expected)
+	}
+}
 
-// func TestPartTwo(t *testing.T) {
+func TestPartTwo_Real(t *testing.T) {
+	b, err := os.ReadFile("input.txt")
+	if err != nil {
+		return
+	}
 
-// 	for _, test := range addTests {
-// 		if output := part2(test.input); output != test.expected {
-// 			t.Errorf("Output %d not equal to expected %d", output, test.expected)
-// 		}
-// 	}
-// }
+	input := string(b)
+
+	got := part2(input)
+
+	var expected int = 391
+
+	if got != expected {
+		t.Errorf("Part2 %d;  want %d", got, expected)
+	}
+}

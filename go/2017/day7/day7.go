@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -16,13 +17,42 @@ func main() {
 	input := string(b)
 
 	fmt.Println(part1(input))
-	// fmt.Println(part2(input))
+	fmt.Println(part2(input))
 }
 
 type Node struct {
-	name     string
-	parent   *Node
-	children []*Node
+	name        string
+	parent      *Node
+	children    []*Node
+	weight      int
+	totalWeight int
+}
+
+func (n *Node) calculateTotalWeight() int {
+
+	var sum int = 0
+
+	for _, v := range n.children {
+		sum += v.calculateTotalWeight()
+	}
+
+	n.totalWeight = n.weight + sum
+
+	return n.totalWeight
+}
+
+func (n *Node) areTheKidsOkay() bool {
+	weight := make(map[int][]*Node)
+
+	for _, child := range n.children {
+		weight[child.totalWeight] = copyAndExpandList(weight[child.totalWeight], child)
+	}
+
+	if len(weight) <= 1 {
+		return true
+	} else {
+		return false
+	}
 }
 
 func part1(input string) (res string) {
@@ -69,6 +99,118 @@ func part1(input string) (res string) {
 	}
 
 	return "!"
+}
+
+func part2(input string) (res int) {
+	nodesAndCommands := strings.Split(input, "\r\n")
+
+	allNodeMap := make(map[string]*Node)
+
+	for position := 0; position < len(nodesAndCommands); position++ {
+		node := nodesAndCommands[position]
+
+		if strings.Contains(node, "->") {
+			sections := strings.Split(node, " ")
+			key := sections[0]
+
+			existingNode, containsNode := allNodeMap[key]
+
+			if !containsNode {
+				newNode := new(Node)
+				newNode.name = key
+				newNode.weight = GetWeightFromString(sections[1])
+				newNode.children = CreateChildren(allNodeMap, newNode, sections[3:])
+
+				allNodeMap[key] = newNode
+			} else {
+				existingNode.weight = GetWeightFromString(sections[1])
+				existingNode.children = CreateChildren(allNodeMap, existingNode, sections[3:])
+			}
+		} else {
+			sections := strings.Split(node, " ")
+			key := sections[0]
+			existingNode, containsNode := allNodeMap[key]
+
+			if !containsNode {
+				newNode := new(Node)
+				newNode.name = key
+				newNode.weight = GetWeightFromString(sections[1])
+
+				allNodeMap[key] = newNode
+			} else {
+				existingNode.weight = GetWeightFromString(sections[1])
+			}
+		}
+	}
+
+	for _, startingNode := range allNodeMap {
+		if startingNode.parent == nil {
+
+			startingNode.calculateTotalWeight()
+
+			imbalancedNode := findImbalancedProgramme(startingNode)
+
+			weightDictionary := make(map[int][]*Node)
+
+			for _, child := range imbalancedNode.children {
+				weightDictionary[child.totalWeight] = copyAndExpandList(weightDictionary[child.totalWeight], child)
+			}
+
+			var incorrectWeight int = 0
+			var correctWeight int = 0
+
+			for k, v := range weightDictionary {
+				if len(v) > 1 {
+					correctWeight = k
+				} else {
+					incorrectWeight = k
+				}
+			}
+
+			weightDelta := correctWeight - incorrectWeight
+			x1 := weightDictionary[incorrectWeight][0]
+			imbalancedNodeWeight := x1.weight
+
+			return imbalancedNodeWeight + weightDelta
+
+		}
+	}
+
+	return 0
+}
+
+func findImbalancedProgramme(parentNode *Node) *Node {
+	weightDictionary := make(map[int][]*Node)
+
+	for _, child := range parentNode.children {
+		weightDictionary[child.totalWeight] = copyAndExpandList(weightDictionary[child.totalWeight], child)
+	}
+
+	if len(weightDictionary) == 1 {
+		return parentNode.parent
+	} else {
+		var incorrectWeight int = 0
+
+		for k, v := range weightDictionary {
+			if len(v) > 1 {
+
+			} else {
+				incorrectWeight = k
+			}
+		}
+
+		return findImbalancedProgramme(weightDictionary[incorrectWeight][0])
+	}
+}
+
+func GetWeightFromString(weightAsString string) (res int) {
+	value, err := strconv.Atoi(strings.Replace(strings.Replace(weightAsString, "(", "", 1), ")", "", 1))
+
+	if err != nil {
+		panic("Balls")
+	}
+
+	return int(value)
 }
 
 func CreateChildren(allNodes map[string]*Node, parentNode *Node, sections []string) (res []*Node) {
