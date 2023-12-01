@@ -5,7 +5,9 @@ VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2022", "2022\2022.csproj", "{BDF38D7E-675D-42B2-955B-EC707B689A2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BenchMarking", "BenchMarking\BenchMarking.csproj", "{C4D8CB42-AC61-4CA5-B1FA-418E78273528}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BenchMarking", "BenchMarking\BenchMarking.csproj", "{C4D8CB42-AC61-4CA5-B1FA-418E78273528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2018", "2018\2018.csproj", "{4D12D8A4-E2EA-4B32-B473-B20563342514}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C4D8CB42-AC61-4CA5-B1FA-418E78273528}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4D8CB42-AC61-4CA5-B1FA-418E78273528}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4D8CB42-AC61-4CA5-B1FA-418E78273528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D12D8A4-E2EA-4B32-B473-B20563342514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D12D8A4-E2EA-4B32-B473-B20563342514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D12D8A4-E2EA-4B32-B473-B20563342514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D12D8A4-E2EA-4B32-B473-B20563342514}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
